@@ -48,6 +48,7 @@ function Column({ tickets, grouping, groupBy, userIdToData }) {
                         ticket={ticket}
                         hideStatusIcon={grouping === 'status'}
                         hideProfileIcon={grouping === 'user'}
+                        hidePriorityIcon={grouping === 'priority'}
                     />
                 ))}
             </div>
