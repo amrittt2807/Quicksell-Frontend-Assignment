@@ -1,11 +1,11 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #F3F6FB; /* Apply the background color here */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f6fb;
 }
 
-/* Make sure the .App class also takes the full height */
 .App {
-    min-height: 100vh;  /* Full viewport height */
+  min-height: 100vh;
 }

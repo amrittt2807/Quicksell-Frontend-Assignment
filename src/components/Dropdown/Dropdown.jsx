@@ -8,26 +8,35 @@ const Dropdown = ({ grouping, setGrouping, ordering, setOrdering }) => {
   const componentRef = useRef(null);
 
   const openDropdown = useCallback(() => {
-    setVisible((prevVisible) => !prevVisible); // Using functional update to toggle state
-  }, []); // No dependencies required since it only toggles the state
+    setVisible((prevVisible) => !prevVisible);
+  }, []);
 
   const handleClickOutside = useCallback(
     (event) => {
-      if (componentRef.current && !componentRef.current.contains(event.target)) {
+      if (
+        componentRef.current &&
+        !componentRef.current.contains(event.target)
+      ) {
         setVisible(false);
       }
     },
-    [componentRef] // Add componentRef as a dependency
+    [componentRef]
   );
 
   const onGroupingChange = useCallback(
-    (e) => setGrouping(e.target.value),
-    [setGrouping] // Add setGrouping as a dependency
+    (e) => {
+      setGrouping(e.target.value);
+      // setVisible(false);
+    },
+    [setGrouping]
   );
 
   const onOrderingChange = useCallback(
-    (e) => setOrdering(e.target.value),
-    [setOrdering] // Add setOrdering as a dependency
+    (e) => {
+      setOrdering(e.target.value);
+      // setVisible(false);
+    },
+    [setOrdering]
   );
 
   useEffect(() => {
@@ -35,7 +44,7 @@ const Dropdown = ({ grouping, setGrouping, ordering, setOrdering }) => {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [handleClickOutside]); // Add handleClickOutside as a dependency
+  }, [handleClickOutside]);
 
   return (
     <div className="dropdown" ref={componentRef}>
@@ -43,7 +52,6 @@ const Dropdown = ({ grouping, setGrouping, ordering, setOrdering }) => {
         <img src={displayIcon} alt="display icon" className="display-icon" />
         <span className="display-text">Display</span>
         <img src={downIcon} alt="down icon" className="dropdown-icon" />{" "}
-        {/* Using the SVG icon */}
       </button>
 
       {visible && (

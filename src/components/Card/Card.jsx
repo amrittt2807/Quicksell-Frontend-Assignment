@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 import userProfilePic from "../../icons/user.png";
-import { getStatusIcon, getPriorityIcon } from "../../utils/helper"; // Also import getPriorityIcon
+import { getStatusIcon, getPriorityIcon } from "../../utils/helper";
 
 const Card = ({ ticket, userData, hideStatusIcon, hideProfileIcon, hidePriorityIcon }) => {
   const priorityList = ["No Priority", "Low", "Medium", "High", "Urgent"];
