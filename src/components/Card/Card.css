@@ -111,4 +111,10 @@
   .status-icon{
     margin-right: 5px;
   }
+
+  @media screen and (max-width:700px) {
+    .card{
+      width: 280px;
+    }
+}
   

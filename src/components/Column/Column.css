@@ -1,8 +1,9 @@
 .column {
     display: flex;
     flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
-    /* width: 280px; */
 }
 
 .column .column-header {
@@ -50,8 +51,8 @@
         width: calc(100vw - 4rem);
     }
     .column .cards-container {
-        width: 100%;
+        width: fit-content;
         overflow-y: auto;
-        flex-direction: row;
+        flex-direction: column;
     }
 }
